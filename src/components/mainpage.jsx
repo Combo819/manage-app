@@ -7,6 +7,7 @@ import Policy from "./policy";
 import Worker from "./worker";
 import history from "../history";
 import Welcome from "./welcome";
+
 const _ = require("lodash");
 const axios = require('axios');
 axios.defaults.baseURL = 'http://127.0.0.1:5000';

@@ -66,23 +66,26 @@ class Policy extends Component {
         method: "post",
         data: form1
       }).then(res => {
-        const newPolicy = _.mapValues(res.data,item=>parseFloat(item))
+       /*  const newPolicy = _.mapValues(res.data,item=>parseFloat(item))
         const {
           expendThreshold,
           shinkThreshold,
           expandRatio,
           shinkRatio
-        } = newPolicy;
-        this.setState({
-          expendThreshold,
-          shinkThreshold,
-          expandRatio,
-          shinkRatio,
-          expendThresholdCu:expendThreshold,
-          shinkThresholdCu:shinkThreshold,
-          expandRatioCu:expandRatio,
-          shinkRatioCu:shinkRatio,
-        },message.success('New Policy Set'));
+        } = newPolicy; */
+        if(res.data.newStatus){
+          this.setState({
+/*             expendThreshold,
+            shinkThreshold,
+            expandRatio,
+            shinkRatio, */
+            expendThresholdCu:this.state.expendThreshold,
+            shinkThresholdCu:this.state.shinkThreshold,
+            expandRatioCu:this.state.expandRatio,
+            shinkRatioCu:this.state.shinkRatio,
+          });
+          message.success('New Policy Set')
+        }
       }).catch(err=>{
         console.log(err);
         message.error('Error Network: Cannot set new policy')

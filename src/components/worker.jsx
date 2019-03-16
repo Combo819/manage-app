@@ -129,10 +129,10 @@ class Worker extends Component {
           </Col>
           <Col span={6}>
             <Card
-              title="Availability"
+              title="Security Group"
               style={{ width: "100%", textAlign: "center" }}
             >
-              {this.props.work.availability}
+              {this.props.work.security_group}
             </Card>
           </Col>
           <Col span={6}>
@@ -215,7 +215,7 @@ class Worker extends Component {
           </Col>
           <Col offset={-4} span={8}>
             <Title level={2} style={{ textAlign: "center" }}>
-              Requ
+              Request
             </Title>
             <Chart
               height={320}
